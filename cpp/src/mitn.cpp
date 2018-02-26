@@ -11,6 +11,15 @@ namespace mitn
 	static constexpr byte TAB = '\t';
 	static constexpr byte SPACE  = ' ';
 
+	static inline int isValid(byte b)
+	{
+		switch (b)
+		{
+		case LF: case CR: case TAB: return true;
+		default: return b >= SPACE;
+		}
+	}
+
 	static int readIndent(const byte*& src)
 	{
 		int result = 0;
@@ -46,7 +55,7 @@ namespace mitn
 	static int readEdges(const byte*& src, int indent, Edges& dst)
 	{
 		int next_indent = readIndent(src);
-		while (next_indent >= indent)
+		while (next_indent >= indent && isValid(*src))
 		{
 			dst.push();
 			next_indent = readNode(src, next_indent, dst.back());
@@ -54,11 +63,20 @@ namespace mitn
 		return next_indent;
 	}
 
-	Edges from(const std::string& data)
+	Edges read(const std::string& data)
 	{
 		auto src = reinterpret_cast<const byte*>(data.c_str());
 		Edges result;
 		readEdges(src, 0, result);
 		return result;
+	}
+
+
+	void Node::write(std::string& out, int indent) const
+	{
+		out.resize(out.size() + indent, '\t');
+		out.append(name);
+		out.push_back('\n');
+		edges.write(out, indent + 1);
 	}
 }

@@ -18,7 +18,7 @@
     <ClCompile Include="test\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\mitn-input.cpp">
+    <ClCompile Include="src\mitn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,5 +26,13 @@
     <ClInclude Include="include\mitn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test\a.mitn">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test\b.mitn">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -100,11 +100,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\mitn-input.cpp" />
+    <ClCompile Include="src\mitn.cpp" />
     <ClCompile Include="test\test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\mitn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test\a.mitn" />
+    <None Include="test\b.mitn" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
