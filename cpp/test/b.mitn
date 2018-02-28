@@ -3,5 +3,10 @@ a b
 d
 	e	f
 		g
-	h
+  h
 i
+  #not-comment # comment
+# indent-breaking comment
+  "contains 
+  space"
+  "contains \r\nnewline and 	tab"

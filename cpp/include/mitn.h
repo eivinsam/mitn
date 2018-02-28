@@ -16,6 +16,8 @@ namespace mitn
 		template <class... Args>
 		void push(Args&&... args) { _data.emplace_back(std::forward<Args>(args)...); }
 
+		const auto size() const { return _data.size(); }
+
 		auto&& back()       { return _data.back(); }
 		auto&& back() const { return _data.back(); }
 
@@ -36,13 +38,6 @@ namespace mitn
 		void write(std::string& out, int indent) const;
 		std::string write() const { std::string out; write(out, 0); return out; }
 	};
-
-	inline void Edges::write(std::string& out, int indent) const
-	{
-		for (auto&& n : _data)
-			n.write(out, indent);
-	}
-
 
 	Edges read(const std::string& data);
 
