@@ -167,4 +167,13 @@ namespace mitn
 			n.write(out, indent);
 		}
 	}
+
+	Potential<Edges*> operator/(Edges& edges, std::string_view edgename)
+	{
+		for (auto&& n : edges)
+			if (n.name == edgename)
+				return { &n, nullptr, edgename };
+		return { nullptr, &edges, edgename };
+	}
+
 }

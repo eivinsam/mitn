@@ -23,10 +23,17 @@ int main()
 	std::cout << "a -> a: " << (trip_a == text_a ? "ok" : "fail!") << '\n';
 
 	const auto text_b = readFile("test/b.mitn");
-	const auto nodes_b = mitn::read(text_b);
+	auto nodes_b = mitn::read(text_b);
 	const auto trip_b = nodes_b.write();
 	std::cout << trip_b;
 	std::cout << "b -> a: " << (trip_b == text_a ? "ok" : "fail!") << '\n';
+
+	nodes_b / "a" / "foo" = "bar";
+	nodes_b / "baz" / "meow" = "woof";
+
+	std::cout << *(nodes_b / "baz" / mitn::as<std::string>);
+	std::cout << nodes_b.write();
+
 
 	return 0;
 }
