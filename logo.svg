@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="220"
+   height="125"
+   viewBox="0 0 58.208331 33.072917"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="logo.svg">
+  <title
+     id="title4748">mitn logo</title>
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="28.968466"
+     inkscape:cy="8.0829461"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     showguides="false"
+     inkscape:snap-to-guides="true"
+     units="px"
+     inkscape:window-width="1840"
+     inkscape:window-height="1051"
+     inkscape:window-x="71"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3699"
+       spacingx="1.3229167"
+       spacingy="1.3229167"
+       dotted="false"
+       snapvisiblegridlinesonly="true"
+       originx="2.6458333"
+       originy="1.3229167" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>mitn logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.92706)">
+    <path
+       id="path4743"
+       style="fill:none;stroke:#2fc122;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 15.874999,282.44789 v 13.22917 m 13.229167,0 1e-6,-19.84375 h 19.843749 c 3.653137,0 6.614588,2.96145 6.614584,6.61458 l 10e-7,13.22917 M 29.104167,282.44789 c 4e-6,-3.65314 -2.961449,-6.61457 -6.614585,-6.61457 -3.653136,0 -6.614587,2.96144 -6.614582,6.61457 4e-6,-3.65315 -2.961447,-6.61459 -6.614583,-6.61459 -3.653136,0 -6.614588,2.96145 -6.614584,6.61459 v 13.22917 m 26.458334,-26.45834 v -2.64583 h 5.291667 c 3.653133,0 6.614582,2.96145 6.614584,6.61458 l -1e-6,14.55209 c -2e-6,1.7543 0.69689,3.43674 1.937366,4.67722 1.240476,1.24047 2.922922,1.93736 4.677218,1.93736 l 1.322916,0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccscsccc" />
+  </g>
+</svg>
