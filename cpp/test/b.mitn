@@ -9,4 +9,4 @@ i
 # indent-breaking comment
   "contains 
   space"
-  "contains \r\nnewline and 	tab"
+  "contains "D"Anewline and 	tab and a ""quote"""

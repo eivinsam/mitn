@@ -61,17 +61,19 @@ namespace mitn
 		case CR: continue;
 		case LF: readIndent(src); --src; dst.push_back(' '); continue;
 		case TAB: dst.push_back('\t'); continue;
-		case '\\':
-			++src;
-			switch (*src)
-			{
-			case 'r': dst.push_back('\r'); continue;
-			case 'n': dst.push_back('\n'); continue;
-			case 't': dst.push_back('\t'); continue;
-			default: dst.push_back(*src); continue;
-			}
 		case '"':
-			++src; return;
+			++src; 
+			if (*src <= ' ')
+				return;
+			else if (*src >= '0' && *src <= '9')
+				dst.push_back(*src - '0');
+			else if (*src >= 'A' && *src < 'A' + 22)
+				dst.push_back(*src - ('A' - 10));
+			else if (*src >= 'a' && *src < 'a' + 22)
+				dst.push_back(*src - ('a' - 10));
+			else
+				dst.push_back(*src);
+			break;
 		default:
 			if (*src < SPACE)
 				return;
@@ -128,23 +130,33 @@ namespace mitn
 
 	static void writeQuote(const std::string& in, std::string& out)
 	{
-		static constexpr const char* hex = "0123456789abcdef";
+		static constexpr const char* digit = 
+			"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		out.push_back('"');
-		for (auto ch : in) switch (ch)
-		{
-		case CR:   out.append("\\r"); continue;
-		case LF:   out.append("\\n"); continue;
-		case TAB:  out.append("\\t"); continue;
-		case '"':  out.append("\\\""); continue;
-		case '\\': out.append("\\\\"); continue;
-		default:   out.push_back(ch); continue;
-		}
+		for (auto ch : in)
+			if (ch >= 0 && ch < ' ')
+			{
+				out.push_back('"');
+				out.push_back(digit[ch]);
+			}
+			else if (ch == '"')
+				out.append("\"\"");
+			else
+				out.push_back(ch);
 		out.push_back('"');
+	}
+
+	static inline bool needs_sanitizing(const std::string& text)
+	{
+		for (auto ch : text)
+			if (ch == '"' || (ch >= 0 && ch <= ' '))
+				return true;
+		return false;
 	}
 
 	void Node::write(std::string& out, int indent) const
 	{
-		if (name.find_first_of(" \t\n\"\\") != std::string::npos)
+		if (needs_sanitizing(name))
 			writeQuote(name, out);
 		else
 			out.append(name);

@@ -5,4 +5,4 @@ d
 i
   #not-comment
   "contains  space"
-  "contains \r\nnewline and \ttab"
+  "contains "D"Anewline and "9tab and a ""quote"""
