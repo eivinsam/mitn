@@ -26,3 +26,32 @@ No definite interpretation of this graph is specified, but one can, for example,
   { "e": "f" }
 }}}
 ```
+
+## Bonus features
+
+### Quoted node names
+
+To create node names that contain spaces or control codes like newline, tab, etc. then one can use quoted node names, like this:
+```
+client
+  name "Alfred E. Neuman"
+  notes "Motto:"A"9""What -
+    me worry?"""
+```
+The corresponding JSON would be
+```
+{"client": {
+    "name": "Alfred E.Neuman",
+    "notes": "Motto:\n\t\"What - me worry?\"" }}
+```
+Quotes begin with `"` and end with `"` followed by a space or a control character. `"` followed by any other character is interpreted as an escape sequence: digits 0-9 and characters A-V/a-v are interpreted as a base 32 nummber in "extended hex" notation. Any other character following `"` is kept as is. Carriage returns are ignores in a quote, and line feeds are replaced with spaces, ignoring any following spaces or tabs. Useful escape sequences include:
+
+| Sequence | JSON sequence | Character |
+|----------|--|-----------|
+| `"0` | `\u0000` | NUL |
+| `"9` | `\t` | TAB |
+| `"A` | `\n` | LF / newline |
+| `"D` | `\r` | CR / carriage return |
+| `""` | `\"` | `"` / double quote |
+
+
