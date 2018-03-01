@@ -1,4 +1,5 @@
-# mitn
+![mitn logo](logo.svg)
+
 Minimal Indented Tree Notation
 
 Basically, 
