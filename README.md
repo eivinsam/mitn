@@ -55,3 +55,16 @@ Quotes begin with `"` and end with `"` followed by a space or a control characte
 | `""` | `\"` | `"` / double quote |
 
 
+### Comments
+
+A `#` followed by a space or a tab starts a comment, and everything up until the first following newline is ignored, without affecting indentation:
+```
+#a#perfectly#valid#nodename# # with a comment after
+# and a comment on the next line
+  key value
+```
+Is roughly equivalent to
+```
+{"#a#perfectly#valid#nodename#": { "key": "value" }}
+```
+
