@@ -68,3 +68,15 @@ Is roughly equivalent to
 {"#a#perfectly#valid#nodename#": { "key": "value" }}
 ```
 
+## Grammar
+
+There are 6 special characters in mitn: tab, line feed (LF), carriage return (CR), space, `"` and `#`. All other characters are considered either text characters or terminating characters. The terminating characters are the characters with codes less than space, ie. the ASCII control characters. All of these characters are considered end-of-input markers. 
+
+### Node
+![Node parsing](doc/flow_node.svg)
+
+### Name
+![Name parsing](doc/flow_name.svg)
+
+### Indent
+![Indent parsing](doc/flow_indent.svg)
